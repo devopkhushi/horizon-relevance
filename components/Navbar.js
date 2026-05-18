@@ -1,66 +1,79 @@
 import Link from 'next/link';
-import { useState } from 'react';
 
 export default function Navbar() {
-  const [isPlatformOpen, setPlatformOpen] = useState(false);
-  const [isCompanyOpen, setCompanyOpen] = useState(false);
-
   return (
-    <header className="bg-black text-white">
-      <nav className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        <div className="flex items-center space-x-3">
-          <img src="/logo.png" alt="Horizon Relevance Logo" className="h-10" />
-          <span className="text-xl font-bold text-white">Horizon Relevance</span>
-        </div>
+    <header className="fixed top-0 left-0 w-full z-50 px-6 py-5">
 
-        <div className="flex space-x-6">
-          <Link href="/">Home</Link>
+      <nav className="max-w-7xl mx-auto">
 
-          <div className="relative">
-            <button onClick={() => setPlatformOpen(!isPlatformOpen)} className="hover:text-blue-400">
-              Platform &#x25BC;
-            </button>
-            {isPlatformOpen && (
-              <div className="absolute bg-white text-black shadow-md mt-2 py-2 rounded w-64 z-50">
-                <Link href="/products/cloud-cost-optimization" className="block px-4 py-2 hover:bg-gray-100">Cloud Cost Optimization</Link>
-                <Link href="/products/multi-cloud-manager" className="block px-4 py-2 hover:bg-gray-100">Multi-Cloud Manager</Link>
-                <Link href="/products/serverless-framework" className="block px-4 py-2 hover:bg-gray-100">Serverless Framework</Link>
-                <Link href="/products/ai-monitoring" className="block px-4 py-2 hover:bg-gray-100">AI Monitoring & RCA</Link>
-                <Link href="/products/self-service-cicd" className="block px-4 py-2 hover:bg-gray-100">Self-Service CI/CD</Link>
-              </div>
-            )}
+        <div className="glass rounded-full px-7 py-4 flex items-center justify-between">
+
+          {/* LEFT */}
+          <Link href="/" className="flex items-center gap-3">
+
+            <img
+              src="logo.png"
+              alt="Horizon Relevance"
+              className="h-10 w-auto"
+            />
+
+            <div className="leading-tight">
+
+              <h1 className="text-lg font-semibold tracking-wide text-white">
+                Horizon
+              </h1>
+
+              <p className="text-xs text-green-400 tracking-[0.25em] uppercase">
+                Relevance
+              </p>
+
+            </div>
+
+          </Link>
+
+          {/* CENTER MENU */}
+          <div className="hidden lg:flex items-center gap-2">
+
+            {[
+              ['About', '/about'],
+              ['Services', '/services'],
+              ['Products', '/products'],
+              ['Contact', '/contact'],
+            ].map(([title, url]) => (
+              <Link
+                key={title}
+                href={url}
+                className="px-5 py-2 rounded-full text-sm text-gray-300 hover:text-green-300 hover:bg-green-500/10 transition duration-300"
+              >
+                {title}
+              </Link>
+            ))}
+
           </div>
 
-          <div className="relative">
-            <button onClick={() => setCompanyOpen(!isCompanyOpen)} className="hover:text-blue-400">
-              Company &#x25BC;
-            </button>
-            {isCompanyOpen && (
-              <div className="absolute bg-white text-black shadow-md mt-2 py-2 rounded w-48 z-50">
-                <Link href="/about" className="block px-4 py-2 hover:bg-gray-100">About Us</Link>
-                <Link href="/blog" className="block px-4 py-2 hover:bg-gray-100">Blog</Link>
-                <Link href="/careers" className="block px-4 py-2 hover:bg-gray-100">Careers</Link>
-                <Link href="/contact" className="block px-4 py-2 hover:bg-gray-100">Contact Us</Link>
-              </div>
-            )}
-          </div>
-
-          <Link href="/products">Products</Link>
-        </div>
-
-        <div className="space-x-3">
-          <Link href="/signin" className="text-white border border-white px-3 py-1 rounded hover:bg-white hover:text-black transition">Sign In</Link>
+          {/* RIGHT BUTTON */}
           <button
             onClick={() =>
               window.Calendly?.initPopupWidget({
                 url: 'https://calendly.com/kashyap-ankur0114/30min',
               })
             }
-            className="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 transition"
+            className="group relative overflow-hidden px-6 py-3 rounded-full bg-gradient-to-r from-green-600 to-green-400 text-black text-sm font-medium hover:scale-105 transition duration-300"
           >
-            Book a Demo
+
+            <span className="relative z-10 flex items-center gap-2">
+              Book Demo
+
+              <span className="px-8 py-2 rounded-full bg-gradient-to-r from-green-700 to-green-400 text-black">
+                ↗
+              </span>
+
+            </span>
+
           </button>
+
         </div>
+
       </nav>
     </header>
   );

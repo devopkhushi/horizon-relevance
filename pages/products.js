@@ -120,18 +120,47 @@ export default function ProductsPage() {
     <>
       <Head>
         <title>Our Products - Horizon Relevance</title>
-        <meta name="description" content="Explore our cloud-native product offerings." />
+        <meta
+          name="description"
+          content="Explore our cloud-native product offerings."
+        />
       </Head>
+
       {/* <Navbar /> */}
-      <main className="py-12 px-6 max-w-6xl mx-auto">
-        <h1 className="text-4xl font-bold mb-8">Our Products</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <main className="relative overflow-hidden py-32 px-6 max-w-7xl mx-auto">
+
+        <div className="text-center mb-20">
+
+          <p className="text-green-400 uppercase tracking-[0.35em] text-sm mb-5">
+            Product Ecosystem
+          </p>
+
+          <h1 className="text-5xl md:text-7xl font-black leading-tight mb-8">
+            Enterprise Products
+            <br />
+            Built For Scale
+          </h1>
+
+          <p className="text-gray-400 text-xl leading-9 max-w-3xl mx-auto">
+            Explore AI-powered cloud platforms, automation systems,
+            and DevSecOps solutions engineered for modern enterprises.
+          </p>
+
+        </div>
+
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-10">
+
           {products.map((product, index) => (
             <ProductCard key={index} {...product} />
           ))}
+
         </div>
+
       </main>
+
       {/* <Footer /> */}
+
     </>
   );
 }

@@ -1,58 +1,195 @@
 import Link from 'next/link';
-import { FaLinkedin, FaTwitter, FaGithub, FaEnvelope } from 'react-icons/fa';
+import {
+  FaLinkedin,
+  FaTwitter,
+  FaGithub,
+  FaEnvelope,
+} from 'react-icons/fa';
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white py-12 mt-16">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* Company Description */}
-        <div>
-          <h2 className="text-xl font-semibold mb-4">Horizon Relevance</h2>
-          <p className="text-gray-300 text-sm">
-            Horizon Relevance empowers digital transformation through intelligent cloud solutions. Our platform simplifies complex cloud operations, enabling teams to scale faster, smarter, and more securely.
+    <footer className="relative overflow-hidden border-t border-green-500/10 mt-20">
+
+      {/* BACKGROUND GLOW */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-green-500/10 blur-[140px] rounded-full"></div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
+
+        {/* CTA SECTION */}
+        <div className="rounded-[40px]
+        bg-gradient-to-r
+         from-green-500/10
+         to-green-700/10
+         border border-green-500/10
+         backdrop-blur-xl
+         p-14
+         mb-20
+         text-center">
+
+          <h2 className="text-5xl font-black mb-6">
+            Build Future-Ready
+            <br/>
+            Cloud Systems
+          </h2>
+
+          <p className="text-gray-400 text-lg max-w-3xl mx-auto mb-10">
+            Transform your infrastructure with AI-powered cloud engineering,
+            automation and enterprise-grade DevSecOps solutions.
           </p>
-          <div className="flex space-x-4 mt-4 text-xl">
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <FaLinkedin />
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-              <FaTwitter />
-            </a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-              <FaGithub />
-            </a>
-            <a href="mailto:info@horizonrelevance.com" aria-label="Email">
-              <FaEnvelope />
-            </a>
+
+          <button className="px-10 py-5 rounded-2xl bg-gradient-to-r from-green-700 to-green-400 text-black font-semibold hover:scale-105 duration-300">
+            Book Strategy Call
+          </button>
+
+        </div>
+
+        {/* TOP GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-14">
+
+          {/* BRAND */}
+          <div>
+
+            <div className="flex items-center gap-3 mb-6">
+
+              <img
+                src="/logo.png"
+                alt="Horizon Relevance"
+                className="h-10 w-auto"
+              />
+
+              <div>
+
+                <h2 className="text-xl font-bold">
+                  Horizon Relevance
+                </h2>
+
+                <p className="text-green-400 text-xs tracking-[0.3em] uppercase">
+                  AI Infrastructure
+                </p>
+
+              </div>
+
+            </div>
+
+            <p className="text-gray-400 leading-8">
+              Horizon Relevance empowers businesses through intelligent cloud systems,
+              AI automation, and enterprise-grade DevSecOps solutions.
+            </p>
+
+            {/* SOCIALS */}
+            <div className="flex gap-4 mt-8">
+
+              {[
+                FaLinkedin,
+                FaTwitter,
+                FaGithub,
+                FaEnvelope,
+              ].map((Icon, index) => (
+                <div
+                  key={index}
+                  className="w-12 h-12 rounded-2xl glass flex items-center justify-center text-gray-300 hover:text-green-300 hover:-translate-y-1 transition duration-300 cursor-pointer"
+                >
+                  <Icon />
+                </div>
+              ))}
+
+            </div>
+
           </div>
+
+          {/* COMPANY */}
+          <div>
+
+            <h3 className="text-lg font-semibold mb-6">
+              Company
+            </h3>
+
+            <div className="flex flex-col gap-4 text-gray-400">
+
+              <Link href="/about" className="hover:text-green-300">
+                About
+              </Link>
+
+              <Link href="/services" className="hover:text-green-300">
+                Services
+              </Link>
+
+              <Link href="/products" className="hover:text-green-300">
+                Products
+              </Link>
+
+              <Link href="/contact" className="hover:text-green-300">
+                Contact
+              </Link>
+
+            </div>
+
+          </div>
+
+          {/* SOLUTIONS */}
+          <div>
+
+            <h3 className="text-lg font-semibold mb-6">
+              Solutions
+            </h3>
+
+            <div className="flex flex-col gap-4 text-gray-400">
+
+              <p>Cloud Infrastructure</p>
+              <p>AI Automation</p>
+              <p>DevSecOps</p>
+              <p>Serverless Systems</p>
+
+            </div>
+
+          </div>
+
+          {/* CONTACT */}
+          <div>
+
+            <h3 className="text-lg font-semibold mb-6">
+              Contact
+            </h3>
+
+            <div className="flex flex-col gap-4 text-gray-400 leading-8">
+
+              <p>Woodbridge, NJ</p>
+
+              <p>info@horizonrelevance.com</p>
+
+              <p>
+                Available for global enterprise partnerships and cloud consulting.
+              </p>
+
+            </div>
+
+          </div>
+
         </div>
 
-        {/* Useful Links */}
-        <div>
-          <h2 className="text-lg font-semibold mb-4 border-l-4 border-blue-600 pl-2">Useful Links</h2>
-          <ul className="space-y-2 text-gray-300 text-sm">
-            <li><Link href="/about">About Us</Link></li>
-            <li><Link href="/careers">Careers</Link></li>
-            <li><Link href="/blog">Blog</Link></li>
-            <li><Link href="/contact">Contact</Link></li>
-          </ul>
+        {/* BOTTOM */}
+        <div className="border-t border-green-500/10 mt-16 pt-8 flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-gray-500">
+
+          <p>
+            © {new Date().getFullYear()} Horizon Relevance. All rights reserved.
+          </p>
+
+          <div className="flex gap-6">
+
+            <Link href="/privacy-policy" className="hover:text-green-300">
+              Privacy Policy
+            </Link>
+
+            <Link href="/terms-of-use" className="hover:text-green-300">
+              Terms of Use
+            </Link>
+
+          </div>
+
         </div>
 
-        {/* Contact Info */}
-        <div>
-          <h2 className="text-lg font-semibold mb-4 border-l-4 border-blue-600 pl-2">Contact Us</h2>
-          <p className="text-sm text-gray-300">📍 Woodbridge, NJ</p>
-          <p className="text-sm text-gray-300">✉️ info@horizonrelevance.com</p>
-        </div>
       </div>
 
-      <div className="mt-8 border-t border-gray-700 pt-6 px-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
-        <p>© {new Date().getFullYear()} Horizon Relevance LLC. All rights reserved.</p>
-        <div className="space-x-4 mt-4 md:mt-0">
-          <Link href="/privacy-policy">Privacy Policy</Link>
-          <Link href="/terms-of-use">Terms of Use</Link>
-        </div>
-      </div>
     </footer>
   );
 }

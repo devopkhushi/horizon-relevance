@@ -1,3 +1,351 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ===== ROOT THEME ===== */
+
+:root{
+ --bg-main:#050505;
+ --bg-secondary:#0b0b0b;
+ --card-bg:#101010;
+
+ --green:#00F58C;
+ --green-light:#2CFFAA;
+ --green-dark:#00C96F;
+
+ --text:#ffffff;
+ --text-secondary:#a1a1aa;
+}
+
+/* ===== GLOBAL ===== */
+
+html,
+body{
+ padding:0;
+ margin:0;
+
+ background:
+ radial-gradient(
+ circle at top left,
+ rgba(0,245,140,.08),
+ transparent 25%
+ ),
+
+ radial-gradient(
+ circle at bottom right,
+ rgba(0,245,140,.08),
+ transparent 25%
+ ),
+
+ var(--bg-main);
+
+ color:var(--text);
+
+ font-family:Inter,sans-serif;
+
+ overflow-x:hidden;
+ scroll-behavior:smooth;
+}
+
+*{
+ box-sizing:border-box;
+}
+
+a{
+ text-decoration:none;
+ color:inherit;
+ transition:.3s;
+}
+
+a:hover{
+ color:var(--green-light);
+}
+
+/* ===== CONTAINER ===== */
+
+.container-main{
+ width:100%;
+ max-width:1400px;
+ margin:auto;
+
+ padding-left:24px;
+ padding-right:24px;
+}
+
+/* ===== HERO ===== */
+
+.hero{
+ min-height:100vh;
+
+ background:
+ linear-gradient(
+ rgba(0,0,0,.72),
+ rgba(0,0,0,.82)
+ ),
+ url('/hero-bg.png');
+
+ background-size:cover;
+ background-position:center;
+ background-repeat:no-repeat;
+
+ position:relative;
+ overflow:hidden;
+}
+
+.hero::before{
+ content:'';
+
+ position:absolute;
+ top:-120px;
+ left:-120px;
+
+ width:450px;
+ height:450px;
+
+ background:#00F58C;
+ opacity:.12;
+
+ filter:blur(150px);
+ border-radius:50%;
+}
+
+.hero::after{
+ content:'';
+
+ position:absolute;
+ bottom:-120px;
+ right:-120px;
+
+ width:450px;
+ height:450px;
+
+ background:#00C96F;
+ opacity:.12;
+
+ filter:blur(150px);
+ border-radius:50%;
+}
+
+/* ===== GLASS EFFECT ===== */
+
+.glass{
+ background:rgba(255,255,255,.03);
+
+ backdrop-filter:blur(18px);
+ -webkit-backdrop-filter:blur(18px);
+
+ border:1px solid rgba(0,245,140,.10);
+
+ border-radius:24px;
+}
+
+/* ===== CARDS ===== */
+
+.card,
+[class*="card"]{
+
+ background:var(--card-bg);
+
+ border-radius:24px;
+
+ border:1px solid rgba(0,245,140,.10);
+
+ transition:.4s ease;
+}
+
+.card:hover,
+[class*="card"]:hover{
+
+ transform:translateY(-8px);
+
+ border-color:rgba(0,245,140,.35);
+
+ box-shadow:
+ 0 0 35px rgba(0,245,140,.15);
+}
+
+/* ===== NAVBAR ===== */
+
+.navbar{
+ background:rgba(8,8,8,.75);
+
+ backdrop-filter:blur(16px);
+
+ border-bottom:
+ 1px solid rgba(0,245,140,.08);
+}
+
+/* ===== TEXT ===== */
+
+.gradient-text{
+ background:linear-gradient(
+ 90deg,
+ #00F58C,
+ #2CFFAA
+ );
+
+ -webkit-background-clip:text;
+ -webkit-text-fill-color:transparent;
+}
+
+/* ===== BUTTONS ===== */
+
+.primary-btn{
+
+ background:linear-gradient(
+ 90deg,
+ #00C96F,
+ #00F58C
+ );
+
+ color:black;
+
+ border:none;
+
+ border-radius:999px;
+
+ transition:.4s;
+}
+
+.primary-btn:hover{
+
+ transform:translateY(-3px);
+
+ box-shadow:
+ 0 0 30px rgba(0,245,140,.30);
+}
+
+/* ===== SCROLLBAR ===== */
+
+::-webkit-scrollbar{
+ width:8px;
+}
+
+::-webkit-scrollbar-track{
+ background:#050505;
+}
+
+::-webkit-scrollbar-thumb{
+ background:linear-gradient(
+ #00C96F,
+ #00F58C
+ );
+
+ border-radius:999px;
+}
+
+/* ===== IMAGE ===== */
+
+img{
+ max-width:100%;
+ display:block;
+}
+
+/* ===== SELECTION ===== */
+
+::selection{
+ background:#00F58C;
+ color:black;
+}
+
+/* ===== PREMIUM GREEN NEON 3D CARDS ===== */
+
+.card,
+[class*="card"],
+.glass{
+
+position:relative;
+overflow:hidden;
+
+background:#0a0a0a;
+
+border-radius:30px;
+
+border:2px solid rgba(34,197,94,.35);
+
+/* permanent glow */
+
+box-shadow:
+0 0 10px rgba(34,197,94,.25),
+0 0 25px rgba(34,197,94,.20),
+0 0 50px rgba(34,197,94,.15),
+0 10px 35px rgba(0,0,0,.7),
+
+/* inner 3D reflection */
+
+inset 0 1px 2px rgba(255,255,255,.12),
+inset 0 -3px 10px rgba(0,0,0,.6);
+
+transition:all .5s ease;
+}
+
+
+/* top reflection */
+
+.card::before,
+[class*="card"]::before,
+.glass::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:50%;
+
+transform:translateX(-50%);
+
+width:90%;
+height:4px;
+
+border-radius:50px;
+
+background:rgba(34,197,94,.95);
+
+filter:blur(10px);
+
+}
+
+
+/* outer neon ring */
+
+.card::after,
+[class*="card"]::after,
+.glass::after{
+
+content:"";
+
+position:absolute;
+
+inset:-2px;
+
+border-radius:30px;
+
+box-shadow:
+0 0 20px rgba(34,197,94,.45),
+0 0 45px rgba(34,197,94,.25);
+
+opacity:.8;
+
+z-index:-1;
+
+}
+
+
+/* hover */
+
+.card:hover,
+[class*="card"]:hover,
+.glass:hover{
+
+transform:
+translateY(-10px)
+scale(1.02);
+
+box-shadow:
+0 0 20px rgba(34,197,94,.4),
+0 0 60px rgba(34,197,94,.3),
+0 0 100px rgba(34,197,94,.18),
+0 20px 50px rgba(0,0,0,.7);
+
+}

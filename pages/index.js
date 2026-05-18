@@ -1,22 +1,26 @@
 import Head from 'next/head';
-// import Navbar from '@/components/Navbar';
-import Hero from '@/components/Hero';
-import Services from '@/components/Services';
-// import Footer from '@/components/Footer';
+import Hero from '../components/Hero';
+import Services from '../components/Services';
+import AboutSection from '../components/AboutSection';
+import TrustedTech from '../components/TrustedTech';
+import Solutions from '../components/Solutions';
 
 export default function Home() {
   return (
     <>
       <Head>
         <title>Horizon Relevance</title>
-        <meta name="description" content="Empowering the Future with Cloud, AI & DevSecOps" />
-        <meta property="og:image" content="/og-image.png" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="description"
+          content="Empowering the Future with Cloud, AI & DevSecOps"
+        />
       </Head>
-      {/* <Navbar /> */}
+
       <Hero />
       <Services />
-      {/* <Footer /> */}
+      <AboutSection />
+      <TrustedTech />
+      <Solutions />
     </>
   );
 }
