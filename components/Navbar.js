@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import AnimatedLogo from './AnimationLogo';
 
 export default function Navbar() {
   return (
@@ -11,23 +12,7 @@ export default function Navbar() {
           {/* LEFT */}
           <Link href="/" className="flex items-center gap-3">
 
-            <img
-              src="logo.png"
-              alt="Horizon Relevance"
-              className="h-10 w-auto"
-            />
-
-            <div className="leading-tight">
-
-              <h1 className="text-lg font-semibold tracking-wide text-white">
-                Horizon
-              </h1>
-
-              <p className="text-xs text-green-400 tracking-[0.25em] uppercase">
-                Relevance
-              </p>
-
-            </div>
+            <AnimatedLogo />
 
           </Link>
 
@@ -38,6 +23,9 @@ export default function Navbar() {
               ['About', '/about'],
               ['Services', '/services'],
               ['Products', '/products'],
+              ['Careers', '/career'],
+              ['Blog', '/blog'],
+              ['Team', '/team'],
               ['Contact', '/contact'],
             ].map(([title, url]) => (
               <Link

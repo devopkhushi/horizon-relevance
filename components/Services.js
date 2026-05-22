@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Services() {
 
   const services = [
@@ -5,21 +7,25 @@ export default function Services() {
       title: "Cloud Infrastructure",
       description:
         "Scalable cloud ecosystems engineered for modern enterprise performance.",
+      href: "/services#cloud-infrastructure",
     },
     {
       title: "DevSecOps Automation",
       description:
         "Secure CI/CD pipelines with integrated monitoring and deployment workflows.",
+      href: "/services#devsecops-automation",
     },
     {
       title: "AI-Powered Monitoring",
       description:
         "Detect incidents faster using intelligent analytics and predictive systems.",
+      href: "/services#ai-powered-monitoring",
     },
     {
       title: "Serverless Architecture",
       description:
         "Build high-performance event-driven applications with minimal overhead.",
+      href: "/services#serverless-architecture",
     },
   ];
 
@@ -60,9 +66,10 @@ export default function Services() {
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
 
           {services.map((service, index) => (
-            <div
+            <Link
               key={index}
-              className="group relative overflow-hidden rounded-[32px] p-8 bg-white/5 backdrop-blur-xl border border-white/10 hover:border-green-400/30 hover:-translate-y-3 transition duration-500"
+              href={service.href}
+              className="group relative overflow-hidden rounded-[32px] p-8 glass box border border-white/6 hover:border-green-400/30 hover:-translate-y-3 transition duration-500 block"
             >
 
               {/* Hover Glow */}
@@ -89,7 +96,7 @@ export default function Services() {
 
               </p>
 
-            </div>
+            </Link>
           ))}
 
         </div>
@@ -98,4 +105,4 @@ export default function Services() {
 
     </section>
   );
-}
+} 
