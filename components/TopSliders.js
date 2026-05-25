@@ -51,7 +51,7 @@ export default function TopSliders() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
-    }, 6000); // slower
+    }, 7000); // slower
 
     return () => clearInterval(timer);
   }, []);
