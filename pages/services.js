@@ -1,124 +1,214 @@
-export default function Services() {
+import Link from "next/link";
 
-  const services = [
-    {
-      title: "Cloud Infrastructure",
-      description:
-        "Scalable cloud ecosystems engineered for modern enterprise performance.",
-    },
-    {
-      title: "DevSecOps Automation",
-      description:
-        "Secure CI/CD pipelines with integrated monitoring and deployment workflows.",
-    },
-    {
-      title: "AI-Powered Monitoring",
-      description:
-        "Detect incidents faster using intelligent analytics and predictive systems.",
-    },
-    {
-      title: "Serverless Architecture",
-      description:
-        "Build high-performance event-driven applications with minimal overhead.",
-    },
-  ];
+const services = [
+  {
+    title: "AI Monitoring & Incident Response",
+    description:
+      "HorizonRelevance turns logs, metrics, alerts, and events into intelligent incident insights. Our AI-driven monitoring platform detects anomalies, identifies probable root causes, and helps teams respond before issues become major outages.",
+    button: "View Solution",
+    href: "/app/ai-monitoring",
+  },
 
+  {
+    title: "AI-Powered Secure SDLC",
+    description:
+      "HorizonRelevance helps teams scan, build, validate, and release applications through secure automated pipelines. Our platform brings DevOps, security checks, compliance validation, and AI-guided remediation into one simple workflow.",
+    button: "Learn More",
+    href: "/app/secure-sdlc",
+  },
+
+  {
+    title: "Cloud Cost Optimization",
+    description:
+      "Control cloud spending with intelligent cost visibility, usage analysis, rightsizing recommendations, and governance workflows.",
+    button: "Start Assessment",
+    href: "/app/cloud-cost",
+  },
+
+  {
+    title: "Cloud Migration & Modernization",
+    description:
+      "HorizonRelevance simplifies cloud migration with automated planning, wave-based execution, infrastructure templates, and deployment orchestration.",
+    button: "Get Started",
+    href: "/app/cloud-migration",
+  },
+];
+
+export default function ServicesPage() {
   return (
+    <section className="min-h-screen bg-[#050505] py-28">
 
-<section className="relative pt-32 pb-32 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6">
 
-{/* background glow */}
+        {/* Heading */}
 
-<div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-green-500/5 blur-[150px] rounded-full"></div>
+        <div className="text-center mb-20">
 
-<div className="relative z-10 max-w-7xl mx-auto px-6">
+          <p
+            className="
+            text-emerald-400
+            uppercase
+            tracking-[4px]
+            font-semibold
+            mb-4
+          "
+          >
+            Our Services
 
-<div className="text-center mb-20">
 
-<p className="text-green-400 uppercase tracking-[0.35em] text-sm mb-5">
 
-Our Expertise
+            
+          </p>
 
-</p>
+          <h1
+            className="
+            text-white
+            text-4xl
+            md:text-6xl
+            font-black
+            mb-6
+          "
+          >
+            Comprehensive IT Services
+          </h1>
 
-<h2 className="text-4xl md:text-6xl font-black leading-tight mb-8">
+          <p
+            className="
+            text-gray-400
+            text-lg
+            max-w-3xl
+            mx-auto
+            leading-8
+          "
+          >
+            Intelligent cloud engineering, AI automation and
+            enterprise solutions designed for performance and scalability.
+          </p>
 
-Intelligent Solutions
-<br/>
+        </div>
 
-Built For Scale
 
-</h2>
+        {/* Grid */}
 
-<p className="text-gray-400 text-xl leading-9 max-w-3xl mx-auto">
+        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
 
-We combine cloud engineering, AI automation, and DevSecOps practices
-to help organizations modernize infrastructure and accelerate growth.
+          {services.map((service, index) => (
 
-</p>
+            <div
+              key={index}
+              className="
+              rounded-[32px]
+              p-8
+              bg-[#161616]
+              border border-white/10
+              hover:border-emerald-400/30
+              hover:-translate-y-3
+              transition-all
+              duration-500
+              min-h-[400px]
+              flex
+              flex-col
+              "
+            >
 
-</div>
+              <h2
+                className="
+                text-white
+                text-2xl
+                font-bold
+                mb-6
+                "
+              >
+                {service.title}
+              </h2>
 
-<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+              <p
+                className="
+                text-gray-400
+                leading-8
+                flex-grow
+                "
+              >
+                {service.description}
+              </p>
 
-{services.map((service,index)=>(
+              <Link
+                href={service.href}
+                className="
+                mt-8
+                text-emerald-400
+                font-semibold
+                hover:text-emerald-300
+                "
+              >
+                {service.button} →
+              </Link>
 
-<div
-key={index}
-className="group
-rounded-[32px]
-p-8
-bg-[#0b0b0b]
-border border-green-500/10
-hover:border-green-400/30
-transition
-duration-500
-hover:-translate-y-3
-hover:shadow-[0_0_30px_rgba(34,197,94,0.15)]"
->
+            </div>
 
-{/* ICON */}
+          ))}
 
-<div
-className="w-16 h-16 rounded-3xl
-bg-gradient-to-r
-from-green-400
-to-green-600
-flex
-items-center
-justify-center
-text-black
-text-2xl
-font-bold
-mb-8"
->
 
-{index+1}
+          {/* Get In Touch Card */}
 
-</div>
+          <Link
+            href="/contact"
+            className="
+            rounded-[32px]
+            p-8
+            bg-[#161616]
+            border border-white/10
+            hover:border-emerald-400/30
+            hover:-translate-y-3
+            transition-all
+            duration-500
+            min-h-[400px]
+            flex
+            items-center
+            justify-center
+            text-center
+            "
+          >
 
-<h3 className="text-2xl font-bold mb-5">
+            <div>
 
-{service.title}
+              <h2
+                className="
+                text-white
+                text-4xl
+                font-bold
+                mb-4
+                "
+              >
+                Get In Touch
+              </h2>
 
-</h3>
+              <p
+                className="
+                text-gray-400
+                mb-6
+                "
+              >
+                Let's build something together
+              </p>
 
-<p className="text-gray-400 leading-8">
+              <span
+                className="
+                text-emerald-400
+                font-semibold
+                "
+              >
+                Contact Us →
+              </span>
 
-{service.description}
+            </div>
 
-</p>
+          </Link>
 
-</div>
+        </div>
 
-))}
+      </div>
 
-</div>
-
-</div>
-
-</section>
-
-);
-
+    </section>
+  );
 }

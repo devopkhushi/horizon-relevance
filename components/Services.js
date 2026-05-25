@@ -1,103 +1,206 @@
 import Link from "next/link";
 
+const services = [
+  {
+    title: "AI Monitoring & Incident Response",
+    description:
+      "HorizonRelevance turns logs, metrics, alerts, and events into intelligent incident insights. Our AI-driven monitoring platform detects anomalies, identifies probable root causes, and helps teams respond before issues become major outages.",
+    button: "View Solution",
+    href: "/app/ai-monitoring",
+  },
+
+  {
+    title: "AI-Powered Secure SDLC",
+    description:
+      "HorizonRelevance helps teams scan, build, validate, and release applications through secure automated pipelines. Our platform brings DevOps, security checks, compliance validation, and AI-guided remediation into one simple workflow.",
+    button: "Learn More",
+    href: "/app/secure-sdlc",
+  },
+
+  {
+    title: "Cloud Cost Optimization",
+    description:
+      "Control cloud spending with intelligent cost visibility, usage analysis, rightsizing recommendations, and governance workflows. HorizonRelevance helps businesses reduce waste while keeping applications reliable and scalable.",
+    button: "Start Assessment",
+    href: "/app/cloud-cost",
+  },
+
+  {
+    title: "Cloud Migration & Modernization",
+    description:
+      "HorizonRelevance simplifies cloud migration with automated planning, wave-based execution, infrastructure templates, cost visibility, and deployment orchestration. Move workloads with less manual effort and better control.",
+    button: "Get Started",
+    href: "/app/cloud-migration",
+  },
+];
+
 export default function Services() {
-
-  const services = [
-    {
-      title: "Cloud Infrastructure",
-      description:
-        "Scalable cloud ecosystems engineered for modern enterprise performance.",
-      href: "/services#cloud-infrastructure",
-    },
-    {
-      title: "DevSecOps Automation",
-      description:
-        "Secure CI/CD pipelines with integrated monitoring and deployment workflows.",
-      href: "/services#devsecops-automation",
-    },
-    {
-      title: "AI-Powered Monitoring",
-      description:
-        "Detect incidents faster using intelligent analytics and predictive systems.",
-      href: "/services#ai-powered-monitoring",
-    },
-    {
-      title: "Serverless Architecture",
-      description:
-        "Build high-performance event-driven applications with minimal overhead.",
-      href: "/services#serverless-architecture",
-    },
-  ];
-
   return (
-    <section className="relative py-32 overflow-hidden bg-[#050505]">
+    <section className="py-28 bg-[#050505]">
 
-      {/* Glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-green-500/10 blur-[140px] rounded-full"></div>
-
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6">
 
         {/* Heading */}
+
         <div className="text-center mb-20">
 
-          <p className="text-green-400 uppercase tracking-[0.35em] text-sm mb-5">
-            Our Expertise
+          <p
+            className="
+            text-emerald-400
+            uppercase
+            tracking-[4px]
+            font-semibold
+            mb-4
+          "
+          >
+            Our Services
           </p>
 
-          <h2 className="text-4xl md:text-6xl font-black leading-tight mb-8 text-white">
-
-            Intelligent Solutions
-            <br />
-
-            Built For Scale
-
+          <h2
+            className="
+            text-white
+            text-4xl
+            md:text-6xl
+            font-black
+            mb-6
+          "
+          >
+            Comprehensive IT Services
           </h2>
 
-          <p className="text-gray-400 text-xl leading-9 max-w-3xl mx-auto">
-
-            We combine cloud engineering, AI automation, and DevSecOps practices
-            to help organizations modernize infrastructure and accelerate growth.
-
+          <p
+            className="
+            text-gray-400
+            max-w-3xl
+            mx-auto
+            text-lg
+            leading-8
+          "
+          >
+            Intelligent cloud engineering, DevSecOps, AI automation,
+            and enterprise solutions designed for scalability.
           </p>
 
         </div>
 
+
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+
+        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
 
           {services.map((service, index) => (
-            <Link
+
+            <div
               key={index}
-              href={service.href}
-              className="group relative overflow-hidden rounded-[32px] p-8 glass box border border-white/6 hover:border-green-400/30 hover:-translate-y-3 transition duration-500 block"
+              className="
+              rounded-[32px]
+              p-8
+              bg-[#161616]
+              border border-white/10
+              hover:-translate-y-3
+              hover:border-emerald-400/30
+              transition-all
+              duration-500
+              min-h-[400px]
+              flex
+              flex-col
+              "
             >
 
-              {/* Hover Glow */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-br from-green-500/10 via-green-600/10 to-green-400/10"></div>
-
-              {/* Number */}
-              <div className="relative z-10 w-16 h-16 rounded-3xl bg-gradient-to-r from-green-400 to-green-600 flex items-center justify-center text-2xl font-bold shadow-[0_0_30px_rgba(34,197,94,0.35)] mb-8 text-black">
-
-                {index + 1}
-
-              </div>
-
-              {/* Title */}
-              <h3 className="relative z-10 text-2xl font-bold mb-5 text-white">
-
+              <h3
+                className="
+                text-white
+                text-2xl
+                font-bold
+                mb-6
+              "
+              >
                 {service.title}
-
               </h3>
 
-              {/* Description */}
-              <p className="relative z-10 text-gray-400 leading-8">
-
+              <p
+                className="
+                text-gray-400
+                leading-8
+                flex-grow
+                "
+              >
                 {service.description}
-
               </p>
 
-            </Link>
+              <Link
+                href={service.href}
+                className="
+                mt-8
+                text-emerald-400
+                font-semibold
+                hover:text-emerald-300
+                "
+              >
+                {service.button} →
+              </Link>
+
+            </div>
+
           ))}
+
+
+
+          {/* GET IN TOUCH CARD */}
+
+          <Link
+            href="/contact"
+            className="
+            rounded-[32px]
+            p-8
+            bg-[#161616]
+            border border-white/10
+            hover:-translate-y-3
+            hover:border-emerald-400/30
+            transition-all
+            duration-500
+            min-h-[400px]
+            flex
+            items-center
+            justify-center
+            text-center
+            "
+          >
+
+            <div>
+
+              <h2
+                className="
+                text-white
+                text-4xl
+                font-bold
+                mb-4
+                "
+              >
+                Get In Touch
+              </h2>
+
+              <p
+                className="
+                text-gray-400
+                mb-6
+                "
+              >
+                Let's build something together
+              </p>
+
+              <span
+                className="
+                text-emerald-400
+                font-semibold
+                "
+              >
+                Contact Us →
+              </span>
+
+            </div>
+
+          </Link>
 
         </div>
 
@@ -105,4 +208,4 @@ export default function Services() {
 
     </section>
   );
-} 
+}

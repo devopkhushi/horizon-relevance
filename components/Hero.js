@@ -6,19 +6,12 @@ export default function Hero() {
     <section
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: "url('/Hero-bg.png')",
-          filter: "brightness(0.80) contrast(1.50) saturate(1.2)",
-        }}
-      />
+      {/* Background removed (image deleted) */}
 
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/50" />
+      <div className="absolute inset-0 bg-black/60" />
 
-      {/* Hero content */}
+      {/* Hero content wrapper */}
       <div className="relative z-10">
         {/* aapka existing content */}
       </div>
@@ -28,6 +21,7 @@ export default function Hero() {
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-emerald-500/10 blur-[150px] rounded-full" />
 
       <div className="relative z-10 max-w-6xl px-6 text-center">
+
 
         <MotionWrapper>
 

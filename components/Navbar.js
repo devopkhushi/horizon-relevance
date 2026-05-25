@@ -3,7 +3,7 @@ import AnimatedLogo from './AnimationLogo';
 
 export default function Navbar() {
   return (
-    <header className="fixed top-0 left-0 w-full z-50 px-6 py-5">
+    <header className="fixed top-7 left-0 w-full z-50 px-6 py-5">
 
       <nav className="max-w-7xl mx-auto">
 
@@ -40,25 +40,18 @@ export default function Navbar() {
           </div>
 
           {/* RIGHT BUTTON */}
-          <button
-            onClick={() =>
-              window.Calendly?.initPopupWidget({
-                url: 'https://calendly.com/kashyap-ankur0114/30min',
-              })
-            }
+          <Link
+            href="/contact"
             className="group relative overflow-hidden px-6 py-3 rounded-full bg-gradient-to-r from-green-600 to-green-400 text-black text-sm font-medium hover:scale-105 transition duration-300"
           >
-
             <span className="relative z-10 flex items-center gap-2">
-              Book Demo
+              Contact Us
 
               <span className="px-8 py-2 rounded-full bg-gradient-to-r from-green-700 to-green-400 text-black">
                 ↗
               </span>
-
             </span>
-
-          </button>
+          </Link>
 
         </div>
 

@@ -13,7 +13,7 @@ export default function Career() {
       ],
     },
     {
-      title: 'Cloud Computing',
+      title: 'Cloud Engineer',
       location: 'Delhi - Remote',
       bullets: [
         'Design scalable cloud infrastructure',
@@ -22,7 +22,7 @@ export default function Career() {
       ],
     },
     {
-      title: 'DevOps Engineering',
+      title: 'DevOps Engineer',
       location: 'Delhi - Remote',
       bullets: [
         'Automate CI/CD pipelines and infrastructure provisioning',
@@ -31,7 +31,7 @@ export default function Career() {
       ],
     },
     {
-      title: 'Database Administration',
+      title: 'DB Administrator',
       location: 'Delhi - Remote',
       bullets: [
         'Manage database performance, backups, and recovery',
@@ -152,16 +152,15 @@ export default function Career() {
         <div className="absolute -top-24 -right-24 w-[380px] h-[380px] bg-blue-500/10 blur-[160px] rounded-full" />
 
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 pt-24 pb-20">
-          <div className="mx-auto max-w-5xl min-h-[92vh] flex flex-col justify-end text-center space-y-6 pb-20">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 pt-16 pb-20">
+          <div className="mx-auto max-w-5xl min-h-[92vh] flex flex-col justify-center text-center space-y-6 pb-0">
             {/* HERO */}
             <section className="text-center">
-            <p className="text-green-400 uppercase tracking-[0.35em] text-sm mb-5">Careers</p>
             <h1 className="text-5xl md:text-7xl font-black leading-tight mb-4">
               Join Our Team
             </h1>
             {/* Location removed as requested */}
-            <p className="text-gray-400 text-xl leading-9 max-w-3xl mx-auto">
+            <p className="text-white/90 text-xl leading-9 max-w-3xl mx-auto">
               We’re hiring for multiple roles. Choose your track and apply.
             </p>
           </section>
@@ -199,7 +198,7 @@ export default function Career() {
                     Apply Now
                   </button>
                   <p className="text-gray-400 text-xs mt-2 text-center">
-                    Send your resume to <span className="text-gray-300">careers@yourdomain.com</span>
+                    Send your resume to <span className="text-gray-300">careers@horizonrelevence.com</span>
                   </p>
                 </div>
               </div>

@@ -15,33 +15,8 @@ export default function Footer() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
 
-        {/* CTA SECTION */}
-        <div className="rounded-[40px]
-        bg-gradient-to-r
-         from-green-500/10
-         to-green-700/10
-         border border-green-500/10
-         backdrop-blur-xl
-         p-14
-         mb-20
-         text-center">
 
-          <h2 className="text-5xl font-black mb-6">
-            Build Future-Ready
-            <br/>
-            Cloud Systems
-          </h2>
 
-          <p className="text-gray-400 text-lg max-w-3xl mx-auto mb-10">
-            Transform your infrastructure with AI-powered cloud engineering,
-            automation and enterprise-grade DevSecOps solutions.
-          </p>
-
-          <button className="px-10 py-5 rounded-2xl bg-gradient-to-r from-green-700 to-green-400 text-black font-semibold hover:scale-105 duration-300">
-            Book Strategy Call
-          </button>
-
-        </div>
 
         {/* TOP GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-14">
@@ -73,8 +48,9 @@ export default function Footer() {
 
             <p className="text-gray-400 leading-8">
               Horizon Relevance empowers businesses through intelligent cloud systems,
-              AI automation, and enterprise-grade DevSecOps solutions.
+              AI automation, and enterprise solutions.
             </p>
+
 
             {/* SOCIALS */}
             <div className="flex gap-4 mt-8">
