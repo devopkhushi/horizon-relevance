@@ -5,8 +5,8 @@ export default function TopBar() {
   return (
     <div className="w-full bg-black/70 border-b border-green-500/10">
       <div className="max-w-7xl mx-auto px-6 py-2 relative flex items-center justify-between text-xs text-gray-400">
-        {/* LEFT: phone */}
-        <div className="flex items-center gap-4 ml-[-44px]">
+        {/* LEFT: phone + location */}
+        <div className="flex items-center gap-3 ml-[-44px]">
           <img
             src="/Logo-2.png"
             alt="Horizon Relevance"
@@ -22,7 +22,7 @@ export default function TopBar() {
           </a>
 
           {/* ADDRESS: top-left corner */}
-          <div className="hidden md:flex items-center gap-2 text-gray-400">
+          <div className="hidden md:flex items-center gap-3 text-gray-400">
             <FaMapMarkerAlt className="text-green-300" />
             <span className="leading-4 whitespace-nowrap">
               16 Homes Park Avenue, Iselin, New Jersey 08830 USA
@@ -31,8 +31,9 @@ export default function TopBar() {
         </div>
 
 
-        {/* CENTER: email */}
-        <div className="flex items-center justify-center flex-1">
+        {/* EMAIL: left aligned after phone + location */}
+        <div className="flex items-center">
+
           <a
             href="mailto:info@horizonrelevance.com"
             className="flex items-center gap-2 hover:text-green-300 transition"
