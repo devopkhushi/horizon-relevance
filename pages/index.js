@@ -4,8 +4,8 @@ import TopSliders from '../components/TopSliders';
 import Services from '../components/Services';
 import AboutSection from '../components/AboutSection';
 import TrustedTech from '../components/TrustedTech';
+import PartnersMarquee from '../components/PartnersMarquee';
 import Solutions from '../components/Solutions';
-
 
 export default function Home() {
   return (
@@ -26,8 +26,8 @@ export default function Home() {
 
       <AboutSection />
       <TrustedTech />
+      <PartnersMarquee />
       <Solutions />
-
     </>
   );
 }

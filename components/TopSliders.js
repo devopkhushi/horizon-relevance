@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const slides = [
   {
     title: "AI Monitoring & Incident Response",
-    desc: "Turn logs, alerts and metrics into intelligent AI insights.",
+    desc: "HorizonRelevance turns logs, metrics, alerts, and events into intelligent incident insights. Our Al-driven monitoring platform detects anomalies, identifies probable root causes, and helps teams respond before issues become major outages.",
     button: "View Solution",
     link: "/app/ai-monitoring",
 
@@ -16,7 +16,7 @@ const slides = [
 
   {
     title: "AI Powered Secure SDLC",
-    desc: "Secure pipelines with AI validation and automation.",
+    desc: "Horizon Relevance helps teams scan, build, validate, and release applications through secure automated pipelines. Our platform brings DevOps, security checks, compliance validation, and Al-guided remediation into one simple workflow.",
     button: "Learn More",
     link: "/app/secure-sdlc",
 
@@ -26,7 +26,7 @@ const slides = [
 
   {
     title: "Cloud Cost Optimization",
-    desc: "Reduce cloud spending with smart recommendations.",
+    desc: "Control cloud spending with intelligent cost visibility, usage analysis, rightsizing recommendations, and governance workflows. Horizon Relevance helps businesses reduce waste while keeping applications reliable and scalable.",
     button: "Start Assessment",
     link: "/app/cloud-cost",
 
@@ -36,7 +36,7 @@ const slides = [
 
   {
     title: "Cloud Migration & Modernization",
-    desc: "Automate migration planning workflows.",
+    desc: "Horizon Relevance simplifies cloud migration with automated planning, wave-based execution, infrastructure templates, cost visibility, and deployment orchestration. Move workloads with less manual effort and better control.",
     button: "Get Started",
     link: "/app/cloud-migration",
 
@@ -96,20 +96,15 @@ export default function TopSliders() {
             "
           >
 
-            <div className="grid lg:grid-cols-2">
+            {/* padding so arrows don't visually overlap/cut the card */}
+            <div className="grid lg:grid-cols-2 gap-8 px-6 lg:px-10 items-stretch">
+
 
               {/* LEFT */}
 
               <div className="p-14 flex flex-col justify-center">
 
-                <span className="
-                text-green-300
-                text-xs
-                uppercase
-                tracking-[5px]
-                ">
-                  FUTURE READY
-                </span>
+
 
                 <h1 className="
                 text-white

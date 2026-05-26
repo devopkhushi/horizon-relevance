@@ -1,29 +1,63 @@
 import Link from 'next/link';
+import { FaPhoneAlt, FaEnvelope, FaLinkedinIn, FaMapMarkerAlt } from 'react-icons/fa';
 
 export default function TopBar() {
   return (
     <div className="w-full bg-black/70 border-b border-green-500/10">
-      <div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between text-xs text-gray-400">
-        <div className="flex items-center gap-3">
-          <span className="inline-flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-green-300" />
-            AI-powered Cloud Engineering • DevSecOps
-          </span>
-        </div>
+      <div className="max-w-7xl mx-auto px-6 py-2 relative flex items-center justify-between text-xs text-gray-400">
+        {/* LEFT: phone */}
+        <div className="flex items-center gap-4 ml-[-44px]">
+          <img
+            src="/Logo-2.png"
+            alt="Horizon Relevance"
+            className="h-6 w-auto"
+          />
 
-        <div className="hidden sm:flex items-center gap-5">
-          <Link href="/services" className="hover:text-green-300 transition">Explore Services</Link>
-          <Link href="/career" className="hover:text-green-300 transition">Careers</Link>
-
-        </div>
-
-        <div className="flex items-center gap-3">
-          <a href="mailto:info@horizonrelevance.com" className="hover:text-green-300 transition">
-            info@horizonrelevance.com
+          <a
+            href="tel:+19086562114"
+            className="flex items-center gap-2 hover:text-green-300 transition"
+          >
+            <FaPhoneAlt className="text-green-300" />
+            <span>+1 (908) 656-2114</span>
           </a>
+
+          {/* ADDRESS: top-left corner */}
+          <div className="hidden md:flex items-center gap-2 text-gray-400">
+            <FaMapMarkerAlt className="text-green-300" />
+            <span className="leading-4 whitespace-nowrap">
+              16 Homes Park Avenue, Iselin, New Jersey 08830 USA
+            </span>
+          </div>
+        </div>
+
+
+        {/* CENTER: email */}
+        <div className="flex items-center justify-center flex-1">
+          <a
+            href="mailto:info@horizonrelevance.com"
+            className="flex items-center gap-2 hover:text-green-300 transition"
+          >
+            <FaEnvelope className="text-green-300" />
+            <span>info@horizonrelevance.com</span>
+          </a>
+        </div>
+
+        {/* RIGHT: LinkedIn bottom-right corner */}
+        <div className="flex items-center justify-end">
+          <Link
+            href="https://www.linkedin.com/company/horizon-relevance/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 hover:text-green-300 transition"
+          >
+            <FaLinkedinIn className="text-green-300" />
+            <span>LinkedIn</span>
+          </Link>
         </div>
       </div>
     </div>
   );
 }
+
+
 
