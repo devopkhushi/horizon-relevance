@@ -31,12 +31,12 @@ export default function TopBar() {
         </div>
 
 
-        {/* EMAIL: left aligned after phone + location */}
-        <div className="flex items-center">
+        {/* EMAIL: move to left side */}
+        <div className="flex items-center gap-3">
 
           <a
             href="mailto:info@horizonrelevance.com"
-            className="flex items-center gap-2 hover:text-green-300 transition"
+            className="flex items-left gap-2 hover:text-green-300 transition"
           >
             <FaEnvelope className="text-green-300" />
             <span>info@horizonrelevance.com</span>
