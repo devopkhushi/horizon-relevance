@@ -1,0 +1,269 @@
+/* CSS Modules: avoid :root (non-pure selector errors). Keep tokens local to .wrapper */
+.wrapper{
+  --divider:#dcdcdc;
+  --text:#111;
+  --muted:#666;
+}
+
+.topEmptyBar{
+  width:100%;
+  height:40px;
+  border:2px solid var(--divider);
+  box-sizing:border-box;
+  margin-bottom:70px;
+}
+
+.mainHeading{
+  text-align:center;
+}
+
+.heading{
+  font-size:56px;
+  font-weight:700;
+  line-height:1.2;
+  margin-bottom:20px;
+}
+
+.subtitle{
+  font-size:22px;
+  font-weight:400;
+  color:var(--muted);
+  margin-bottom:70px;
+}
+
+.thinDivider{
+  height:1px;
+  background:var(--divider);
+  margin-bottom:70px;
+}
+
+.section{
+  display:flex;
+  min-height:420px;
+  align-items:center;
+}
+
+.sectionGapImageContent{
+  gap:50px;
+}
+
+.leftImage{
+  width:380px;
+  height:320px;
+  border:2px solid #cfcfcf;
+  position:relative;
+  background:#fff;
+  flex:0 0 auto;
+}
+
+.xWireframe::before,
+.xWireframe::after{
+  content:"";
+  position:absolute;
+  inset:14px;
+  border-top:2px solid #bcbcbc;
+  transform-origin:center;
+  opacity:0.9;
+}
+
+.xWireframe::before{ transform:rotate(45deg); }
+.xWireframe::after{ transform:rotate(-45deg); }
+
+.imageLabel{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  background:#eee;
+  padding:12px 20px;
+  font-size:18px;
+  font-weight:500;
+}
+
+.founderDetailsTitle{
+  font-size:52px;
+  font-weight:700;
+  margin-bottom:30px;
+}
+
+.placeholderLine{
+  height:8px;
+  background:#bcbcbc;
+  margin:0;
+}
+
+.button{
+  margin-top:35px;
+  width:180px;
+  height:55px;
+  background:transparent;
+  border:2px solid #666;
+  font-size:24px;
+  cursor:pointer;
+  transition:all 0.3s ease;
+}
+
+.button:hover{
+  background:#111;
+  color:#fff;
+}
+
+.expertiseRow{
+  margin-top:50px;
+  border-top:1px solid var(--divider);
+  display:flex;
+  height:100px;
+}
+
+.expertiseCol{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+}
+
+.expertiseCol:not(:last-child)::after{
+  content:"";
+  position:absolute;
+  right:0;
+  top:15px;
+  bottom:15px;
+  width:1px;
+  background:var(--divider);
+}
+
+.expertiseIcon{
+  font-size:18px;
+  line-height:1;
+  margin-bottom:8px;
+  color:#111;
+}
+
+.expertiseText{
+  font-size:16px;
+  color:#111;
+  font-weight:500;
+}
+
+.dividerBlock{
+  width:100%;
+  height:1px;
+  background:var(--divider);
+  margin-top:70px;
+  margin-bottom:70px;
+}
+
+.contentName{
+  font-size:44px;
+  font-weight:700;
+  margin-bottom:12px;
+}
+
+.contentRole{
+  font-size:28px;
+  font-weight:500;
+  margin-bottom:40px;
+}
+
+.mutedLines{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.mutedLine{
+  height:8px;
+  background:#bcbcbc;
+}
+
+.productDesignerImage{
+  width:350px;
+  height:280px;
+}
+
+.productDesignerName{
+  font-size:42px;
+  font-weight:700;
+  text-align:center;
+}
+
+.underline{
+  height:1px;
+  background:var(--divider);
+  margin-top:14px;
+  margin-bottom:25px;
+}
+
+.productDesignerRole{
+  font-size:26px;
+  margin-top:25px;
+  text-align:center;
+}
+
+.centerPlaceholders{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:18px;
+}
+
+.centerPlaceholder{
+  height:8px;
+  background:#bcbcbc;
+  width:60%;
+}
+
+.comingSoonText{
+  font-size:44px;
+  font-weight:700;
+}
+
+.comingSoonUnderline{
+  height:1px;
+  background:var(--divider);
+  width:70%;
+  margin:18px 0 25px;
+}
+
+.smallPlaceholderLines{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.smallPlaceholderLine{
+  height:8px;
+  background:#bcbcbc;
+  width:70%;
+}
+
+.greyPlaceholder{
+  width:380px;
+  height:320px;
+  background:#d9d9d9;
+  border:2px solid #cfcfcf;
+  position:relative;
+  flex:0 0 auto;
+}
+
+/* responsive */
+@media (max-width: 900px){
+  .heading{ font-size:44px; }
+  .section{ flex-direction:column; min-height:auto; align-items:center; }
+  .leftImage{ width:320px; height:270px; }
+  .dividerBlock{ margin-top:50px; margin-bottom:50px; }
+  .subtitle{ margin-bottom:50px; }
+  .thinDivider{ margin-bottom:50px; }
+  .expertiseRow{ height:auto; flex-wrap:wrap; }
+  .expertiseCol{ width:50%; flex:none; margin-bottom:20px; }
+  .expertiseCol:not(:last-child)::after{ display:none; }
+}
+
+@media (max-width: 480px){
+  .heading{ font-size:34px; }
+  .subtitle{ font-size:18px; }
+  .topEmptyBar{ height:30px; margin-bottom:50px; }
+  .button{ font-size:20px; width:160px; height:50px; }
+}

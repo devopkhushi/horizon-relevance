@@ -1,210 +1,58 @@
 import Link from "next/link";
+import Navbar from "../components/Navbar";
 
 const services = [
   {
-    title: "AI Monitoring & Incident Response",
-    description:
-      "HorizonRelevance turns logs, metrics, alerts, and events into intelligent incident insights. Our AI-driven monitoring platform detects anomalies, identifies probable root causes, and helps teams respond before issues become major outages.",
-    button: "View Solution",
-    href: "/app/ai-monitoring",
+    title: "Cloud Migration & Modernization",
+    href: "/app/cloud-migration",
   },
-
-  {
-    title: "AI-Powered Secure SDLC",
-    description:
-      "HorizonRelevance helps teams scan, build, validate, and release applications through secure automated pipelines. Our platform brings DevOps, security checks, compliance validation, and AI-guided remediation into one simple workflow.",
-    button: "Learn More",
-    href: "/app/secure-sdlc",
-  },
-
   {
     title: "Cloud Cost Optimization",
-    description:
-      "Control cloud spending with intelligent cost visibility, usage analysis, rightsizing recommendations, and governance workflows.",
-    button: "Start Assessment",
     href: "/app/cloud-cost",
   },
-
   {
-    title: "Cloud Migration & Modernization",
-    description:
-      "HorizonRelevance simplifies cloud migration with automated planning, wave-based execution, infrastructure templates, and deployment orchestration.",
-    button: "Get Started",
-    href: "/app/cloud-migration",
+    title: "AI Monitoring & Incident Response",
+    href: "/app/ai-monitoring",
+  },
+  {
+    title: "AI-Powered Secure SDLC",
+    href: "/app/secure-sdlc",
   },
 ];
 
 export default function ServicesPage() {
   return (
-    <section className="min-h-screen bg-[#050505] py-28">
+    <>
+      <Navbar />
+      <main className="min-h-screen bg-[#020617] text-white px-6 py-24">
+        <div className="max-w-7xl mx-auto">
+          <header className="mb-10 text-center">
+            <p className="text-emerald-300 uppercase tracking-[2px] text-sm mb-3">
+              Services
+            </p>
+            <h1 className="text-4xl font-bold mb-4">Explore Solutions</h1>
+            <p className="text-gray-300 max-w-2xl mx-auto">
+              Choose a service to open its dedicated page.
+            </p>
+          </header>
 
-      <div className="max-w-7xl mx-auto px-6">
-
-        {/* Heading */}
-
-        <div className="text-center mb-20">
-
-          <p
-            className="
-            text-emerald-400
-            uppercase
-            tracking-[4px]
-            font-semibold
-            mb-4
-          "
-          >
-            Our Services
-          </p>
-
-          <h1
-            className="
-            text-white
-            text-4xl
-            md:text-6xl
-            font-black
-            mb-6
-          "
-          >
-            Comprehensive IT Services
-          </h1>
-
-          <p
-            className="
-            text-gray-400
-            text-lg
-            max-w-3xl
-            mx-auto
-            leading-8
-          "
-          >
-            Intelligent cloud engineering, AI automation and
-            enterprise solutions designed for performance and scalability.
-          </p>
-
-        </div>
-
-
-        {/* Grid */}
-
-        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
-
-          {services.map((service, index) => (
-
-            <div
-              key={index}
-              className="
-              rounded-[32px]
-              p-8
-              bg-[#161616]
-              border border-white/10
-              hover:border-emerald-400/30
-              hover:-translate-y-3
-              transition-all
-              duration-500
-              min-h-[400px]
-              flex
-              flex-col
-              "
-            >
-
-              <h2
-                className="
-                text-white
-                text-2xl
-                font-bold
-                mb-6
-                "
-              >
-                {service.title}
-              </h2>
-
-              <p
-                className="
-                text-gray-400
-                leading-8
-                flex-grow
-                "
-              >
-                {service.description}
-              </p>
-
+          <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {services.map((s) => (
               <Link
-                href={service.href}
-                className="
-                mt-8
-                text-emerald-400
-                font-semibold
-                hover:text-emerald-300
-                "
+                key={s.href}
+                href={s.href}
+                className="card glass p-6 rounded-3xl hover:shadow-2xl transition"
               >
-                {service.button} →
+                <div className="flex items-center justify-between gap-4">
+                  <h2 className="text-lg font-bold">{s.title}</h2>
+                  <span className="text-green-300 font-semibold">↗</span>
+                </div>
               </Link>
-
-            </div>
-
-          ))}
-
-
-          {/* Get In Touch Card */}
-
-          <Link
-            href="/contact"
-            className="
-            rounded-[32px]
-            p-8
-            bg-[#161616]
-            border border-white/10
-            hover:border-emerald-400/30
-            hover:-translate-y-3
-            transition-all
-            duration-500
-            min-h-[400px]
-            flex
-            items-center
-            justify-center
-            text-center
-            "
-          >
-
-            <div>
-
-              <h2
-                className="
-                text-white
-                text-4xl
-                font-bold
-                mb-4
-                "
-              >
-                Get In Touch
-              </h2>
-
-              <p
-                className="
-                text-gray-400
-                mb-6
-                "
-              >
-                Let's build something together
-              </p>
-
-              <span
-                className="
-                text-emerald-400
-                font-semibold
-                "
-              >
-                Contact Us →
-              </span>
-
-            </div>
-
-          </Link>
-
+            ))}
+          </section>
         </div>
-
-      </div>
-
-    </section>
+      </main>
+    </>
   );
 }
+

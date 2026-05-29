@@ -2,16 +2,42 @@ import React from "react";
 import AnimatedStat from "./AnimatedStat";
 
 const companies = [
-  "storage360",
-  "Software Suggest",
-  "Rivo Holdings",
-  "Origo",
-  "Main Street Auto",
-  "Mainspring",
-  "IDMM",
-  "HomePride",
-  "Gemini Worktops",
-  "CoverRight",
+  {
+    name: "storage360",
+    logoUrl: "https://storage360.com/favicon.ico",
+  },
+  {
+    name: "Software Suggest",
+    logoUrl: "https://www.softwaresuggest.com/favicon.ico",
+  },
+  {
+    name: "Rivo Holdings",
+    logoUrl: "https://www.rivoholdings.com/favicon.ico",
+  },
+  {
+    name: "Origo",
+    logoUrl: "https://origo.com/favicon.ico",
+  },
+  {
+    name: "Main Street Auto",
+    logoUrl: "https://mainstreetauto.com/favicon.ico",
+  },
+  {
+    name: "Mainspring",
+    logoUrl: "https://www.mainspringenergy.com/favicon.ico",
+  },
+  {
+    name: "HomePride",
+    logoUrl: "https://www.homepridebath.com/about-us/favicon.ico",
+  },
+  {
+    name: "Gemini Worktops",
+    logoUrl: "https://www.geminiworktops.com/favicon.ico",
+  },
+  {
+    name: "CoverRight",
+    logoUrl: "https://coverright.com/favicon.ico",
+  },
 ];
 
 export default function PartnersMarquee({
@@ -65,9 +91,15 @@ export default function PartnersMarquee({
                   hover:opacity-100
                 "
               >
-                <span className="text-base md:text-lg font-bold text-white/70 hover:text-white px-2 text-center">
-                  {company}
-                </span>
+                <img
+                  src={company.logoUrl}
+                  alt={company.name}
+                  className="h-[36px] w-[140px] object-contain opacity-90 hover:opacity-100"
+                  loading="lazy"
+                  onError={(e) => {
+                    e.currentTarget.style.display = "none";
+                  }}
+                />
               </div>
             ))}
           </div>

@@ -46,7 +46,7 @@ export default function TopBar() {
         {/* RIGHT: LinkedIn bottom-right corner */}
         <div className="flex items-center justify-end">
           <Link
-            href="https://www.linkedin.com/company/horizon-relevance/"
+            href="https://www.linkedin.com/company/horizonrelevance/posts/?feedView=all"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 hover:text-green-300 transition"

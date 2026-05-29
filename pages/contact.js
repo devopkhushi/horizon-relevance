@@ -18,11 +18,37 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(formData);
-  };
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
+  try {
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+      alert("Message sent successfully!");
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+    } else {
+      alert("Failed to send message");
+    }
+  } catch (error) {
+    console.error(error);
+    alert("Something went wrong");
+  }
+};
   return (
     <section className="min-h-screen relative overflow-hidden bg-[#05070f] text-white">
 
