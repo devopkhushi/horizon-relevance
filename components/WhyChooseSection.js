@@ -103,7 +103,7 @@ export default function WhyChooseSection() {
             <p className="
             text-gray-400
             mt-8
-            leading-9
+            leading-8
             text-lg
             ">
 

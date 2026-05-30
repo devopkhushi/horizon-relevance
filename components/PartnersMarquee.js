@@ -3,40 +3,40 @@ import AnimatedStat from "./AnimatedStat";
 
 const companies = [
   {
-    name: "storage360",
-    logoUrl: "https://storage360.com/favicon.ico",
+    name: "Storage360",
+    logoUrl: "/Storage360.png",
   },
   {
-    name: "Software Suggest",
-    logoUrl: "https://www.softwaresuggest.com/favicon.ico",
+    name: "SoftwareSuggest",
+    logoUrl: "/SoftwareSuggest.png",
   },
   {
-    name: "Rivo Holdings",
-    logoUrl: "https://www.rivoholdings.com/favicon.ico",
+    name: "RivoHoldings",
+    logoUrl: "/RivoHoldings.png",
   },
   {
     name: "Origo",
-    logoUrl: "https://origo.com/favicon.ico",
+    logoUrl: "/Origo.png",
   },
   {
-    name: "Main Street Auto",
-    logoUrl: "https://mainstreetauto.com/favicon.ico",
+    name: "MainStreet",
+    logoUrl: "/MainStreet.png",
   },
   {
     name: "Mainspring",
-    logoUrl: "https://www.mainspringenergy.com/favicon.ico",
+    logoUrl: "/Mainspring.png",
   },
   {
     name: "HomePride",
-    logoUrl: "https://www.homepridebath.com/about-us/favicon.ico",
+    logoUrl: "/HomePride.png",
   },
   {
-    name: "Gemini Worktops",
-    logoUrl: "https://www.geminiworktops.com/favicon.ico",
+    name: "GeminiWorktops",
+    logoUrl: "/GeminiWorktops.png",
   },
   {
     name: "CoverRight",
-    logoUrl: "https://coverright.com/favicon.ico",
+    logoUrl: "/CoverRight.png",
   },
 ];
 
