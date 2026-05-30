@@ -20,7 +20,7 @@ export default function AnimatedStat({ value, suffix, label }) {
 
     let started = false;
     let rafId;
-    const duration = 900; // ms
+    const duration = 5000; // ms (slow so it feels like premium progressive counting)
     const start = performance.now();
 
     const animate = (t) => {
